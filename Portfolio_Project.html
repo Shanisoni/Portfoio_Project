@@ -9,6 +9,41 @@
       src="https://kit.fontawesome.com/74ea9753e4.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      .ml11 {
+        font-weight: 700;
+        font-size: 3.5em;
+      }
+    
+      .ml11 .text-wrapper {
+        position: relative;
+        display: inline-block;
+        padding-top: 0.1em;
+        padding-right: 0.05em;
+        padding-bottom: 0.15em;
+      }
+    
+      .ml11 .line {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: #fff;
+        transform-origin: 0 50%;
+      }
+    
+      .ml11 .line1 { 
+        top: 0; 
+        left: 0;
+      }
+    
+      .ml11 .letter {
+        display: inline-block;
+        line-height: 1em;
+      }
+    </style>
   </head>
   <body>
     <div id="header">
@@ -28,10 +63,23 @@
         </nav>
 
         <div class="header-text">
-          <p class="" , style="color:rgb(4, 86, 240)">Full-Stack Web Developer </p>
-          <h1>Hi, I'm <span>Shani Soni 
-
-          </span><br />From Ghaziabad</h1>
+          <p style="color:rgb(4, 86, 240)"></p>
+          <div class="namecontainer">
+          <h1>Hi, I'm 
+              <h1 class="ml11">
+                  <span class="text-wrapper">
+                      <span class="line line1"></span>
+                      <span class="letters">Shani Soni  </span>
+                  </span>
+              </h1><br/>
+            
+              <br>
+              <h1>From Ghaziabad</h1>
+            </div>
+          </h1>
+          <img src="mypic.png" class="imgclass">
+      </div>
+      
         </div>
       </div>
     </div>
@@ -223,6 +271,17 @@ I'm on a continuous quest for knowledge, exploring new technologies, and seeking
       </p>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
   <script>
     var tabLinks = document.getElementsByClassName("tab-links");
     var tabContents = document.getElementsByClassName("tab-contents");
@@ -269,5 +328,42 @@ I'm on a continuous quest for knowledge, exploring new technologies, and seeking
         .catch((error) => console.error("Error!", error.message));
     });
   </script>
+  <script src="Portfolio_Project.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script>
+  // Wrap every letter in a span
+  var textWrapper = document.querySelector('.ml11 .letters');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+  anime.timeline({loop: true})
+    .add({
+      targets: '.ml11 .line',
+      scaleY: [0,1],
+      opacity: [0.5,1],
+      easing: "easeOutExpo",
+      duration: 700
+    })
+    .add({
+      targets: '.ml11 .line',
+      translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+      easing: "easeOutExpo",
+      duration: 700,
+      delay: 100
+    }).add({
+      targets: '.ml11 .letter',
+      opacity: [0,1],
+      easing: "easeOutExpo",
+      duration: 600,
+      offset: '-=775',
+      delay: (el, i) => 34 * (i+1)
+    }).add({
+      targets: '.ml11',
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 1000
+    });
+</script>
 </body>
 </html>

@@ -14,7 +14,7 @@
   #header {
     width: 100%;
     height: 100vh;
-    background-image: url(background.png);
+    background-image: url(New-bg.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -428,3 +428,85 @@
     margin-top: -40px;
     display: block;
   }
+
+
+
+
+
+/* **********special Effect */
+
+
+  .tag {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 1s;
+  }
+  
+  .tag.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  .yellow { background-color: lightyellow; }
+  .red { background-color: lightcoral; }
+  .blue { background-color: lightblue; }
+  .green { background-color: lightgreen; }
+  
+      
+  .header-text{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .imgclass{
+    margin-right: -17rem;
+    margin-top: -15rem;
+    padding-left: 15rem;
+    height: 45rem;
+    width: 60rem;
+    /* border-bottom-left-radius: 40rem; */
+    border-bottom-right-radius: 20rem;
+     
+  }
+
+  .image{
+   margin-bottom: -19rem;
+  }
+      
+  .namecontainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+
+
+  /* CSS for default styles */
+
+.namecontainer {
+  /* Your default styles for .namecontainer */
+}
+
+/* Media Query for devices with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  .namecontainer {
+    /* Your styles for smaller devices */
+    /* For example: */
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+/* Media Query for devices with a maximum width of 576px */
+@media only screen and (max-width: 576px) {
+  .namecontainer {
+    /* Your styles for even smaller devices */
+    /* For example: */
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+/* Add more media queries as needed for specific device widths */
